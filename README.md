@@ -1,20 +1,15 @@
-# cra-template-redux-typescript
+# cra-template-redux
 
-The official Redux+TS template for [Create React App](https://github.com/facebook/create-react-app).
-
-To use this template, add `--template redux-typescript` when creating a new app.
-
-For example:
+## Usage
 
 ```sh
-npx create-react-app my-app --template redux-typescript
-
-# or
-
-yarn create react-app my-app --template redux-typescript
+npx create-react-app my-app --scripts-version windego-react-scripts --template windego
 ```
 
-For more information, please refer to:
+## TypeScript
 
-- [Getting Started](https://create-react-app.dev/docs/getting-started) – How to create a new app.
-- [User Guide](https://create-react-app.dev) – How to develop apps bootstrapped with Create React App.
+```sh
+npx create-react-app my-app --template windego-typescript --scripts-version windego-react-scripts
+```
+
+npm unpublish cra-template-windego@1.0.11
