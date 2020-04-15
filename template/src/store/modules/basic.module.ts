@@ -1,17 +1,17 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 // eslint-disable-next-line import/no-cycle
-import { AppThunk, RootState } from '@store/index';
+import { AppThunk, RootState } from '@store/index'
 
-import cacheStorage from '@utils/localstorageExpires';
+import cacheStorage from '@utils/localstorageExpires'
 
 interface BasicState {
-  collapsed: boolean;
-  title: string;
+  collapsed: boolean
+  title: string
 }
 const initialState: BasicState = {
   collapsed: cacheStorage.get('collapsed'),
   title: 'React Demo',
-};
+}
 
 export const slice = createSlice({
   name: 'basic',
@@ -24,10 +24,10 @@ export const slice = createSlice({
     //     state[key] = val;
     //   });
     // },
-    changeCollapsed: state => {
-      const collapsed = !state.collapsed;
-      cacheStorage.set('collapsed', collapsed);
-      state.collapsed = collapsed;
+    changeCollapsed: (state) => {
+      const collapsed = !state.collapsed
+      cacheStorage.set('collapsed', collapsed)
+      state.collapsed = collapsed
     },
     // decrement: state => {
     //   state.value -= 1;
@@ -37,10 +37,10 @@ export const slice = createSlice({
     //   state.value += action.payload;
     // },
   },
-});
+})
 
-export const { changeCollapsed } = slice.actions;
-export const { name } = slice;
+export const { changeCollapsed } = slice.actions
+export const { name } = slice
 
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
@@ -55,7 +55,7 @@ export const { name } = slice;
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
-export const selectCollapsed = (state: RootState) => state.basic.collapsed;
-export const getTitle = (state: RootState) => state.basic.title;
+export const selectCollapsed = (state: RootState) => state.basic.collapsed
+export const getTitle = (state: RootState) => state.basic.title
 
-export default slice.reducer;
+export default slice.reducer

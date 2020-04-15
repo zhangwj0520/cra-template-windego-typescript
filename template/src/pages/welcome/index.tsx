@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './index.scss';
+import React from 'react'
+import styles from './index.scss'
 
 export default () => {
   return (
@@ -12,5 +12,5 @@ export default () => {
       </header>
       <div className="welcome-bg" />
     </div>
-  );
-};
+  )
+}

@@ -1,56 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import { Switch, BrowserRouter as Router } from 'react-router-dom'
+import App from '@layouts/index'
+import { getUserInfo } from '@layouts/api'
 
-function App() {
+import { useDispatch } from 'react-redux'
+import { setUserInfo } from '@src/store/modules/userInfo.module'
+
+interface Props {}
+
+const Root = (props: Props) => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    const getInitData = async () => {
+      const data = await getUserInfo()
+      dispatch(setUserInfo(data))
+    }
+    getInitData()
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
+    <Router>
+      <Switch>
+        <App />
+      </Switch>
+    </Router>
+  )
 }
 
-export default App;
+export default Root
