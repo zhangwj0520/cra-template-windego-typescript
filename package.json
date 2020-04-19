@@ -1,6 +1,6 @@
 {
   "name": "cra-template-windego-typescript",
-  "version": "0.1.20",
+  "version": "0.1.25",
   "scripts": {
     "prettify": "prettier --trailing-comma es5 --single-quote --write './template/src/**/*.{ts,tsx}'",
     "lint": "eslint './template/src/**/*.{ts,tsx}'",
