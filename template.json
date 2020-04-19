@@ -50,7 +50,7 @@
     },
     "husky": {
       "hooks": {
-        "pre-commit": "lint-staged -c .lintstagedrc",
+        "pre-commit": "lint-staged -c lint-staged.config.js",
         "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
       }
     }
